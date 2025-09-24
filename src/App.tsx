@@ -1,10 +1,9 @@
-import { Calculator } from './components';
+import { Calculator } from '@components';
 
 function App() {
   return (
     <main className=''>
-      <Calculator />
-      
+      <Calculator /> 
     </main>
   );
 }

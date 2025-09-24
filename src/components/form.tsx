@@ -2,7 +2,7 @@ import { Radio, Input, Button } from '../components'
 
 export const Form = () => {
   return (
-    <div className='bg-White w-[375px] py-8 px-6'>
+    <div className='bg-White py-8 px-6'>
       <h1 className='text-2xl font-bold mb-2'>Mortgage Calculator</h1>
       <button className='font-medium underline text-Slate-700 mb-6'>
         Clear All
