@@ -2,9 +2,9 @@ import { Radio, Input, Button } from '../components'
 
 export const Form = () => {
   return (
-    <div className='bg-White py-8 px-6'>
+    <form className='bg-White py-8 px-6'>
       <h1 className='text-2xl font-bold mb-2'>Mortgage Calculator</h1>
-      <button className='font-medium underline text-Slate-700 mb-6'>
+      <button className='font-medium underline text-Slate-700 mb-6 cursor-pointer'>
         Clear All
       </button>
 
@@ -31,6 +31,6 @@ export const Form = () => {
       </div>
 
       <Button />
-    </div>
+    </form>
   )
 }

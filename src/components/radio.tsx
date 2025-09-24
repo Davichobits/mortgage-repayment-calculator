@@ -11,6 +11,7 @@ export const Radio = ({text}: Props) => {
         >
           <input
             name='mortgage'
+            required
             type='radio'
             className='peer h-5 w-5 cursor-pointer appearance-none rounded-full border-2 border-Slate-500 checked:border-Lime transition-all'
             id={text}
