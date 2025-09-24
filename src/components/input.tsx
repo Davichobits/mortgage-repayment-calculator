@@ -19,7 +19,7 @@ export const Input = ({ label, unit, unitPosition='start' }: Props) => {
       <div className='relative'>
 
         
-        <input className={`w-full outline outline-Slate-500 rounded-sm focus:outline-Lime cursor-pointer hover:outline-Lime h-[46px] peer ${isStart ? 'pl-14' : 'pl-4'} [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`} type="number" />
+        <input required className={`w-full outline outline-Slate-500 rounded-sm focus:outline-Lime cursor-pointer transition-colors hover:outline-Lime h-[46px] peer ${isStart ? 'pl-14' : 'pl-4'} [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`} type="number" />
 
         <span className={`bg-Slate-100 grid place-content-center px-4 h-full absolute top-0 focus: ${coditionalStyles} peer-hover:bg-Lime peer-focus:bg-Lime`}>{unit}</span>
 
