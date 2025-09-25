@@ -1,9 +1,15 @@
 import { Form, Results } from '@components'
+import { PaymentContextProvider } from '@contexts/payment-context-provider'
+
+
 export const Calculator = () => {
+
   return (
-    <section className='w-[375px]'>
-      <Form/>
-      <Results/>
-    </section>
+    <PaymentContextProvider>
+      <section className='w-[375px]'>
+        <Form/>
+        <Results/>
+      </section>
+    </PaymentContextProvider>
   )
 }

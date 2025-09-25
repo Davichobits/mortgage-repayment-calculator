@@ -2,7 +2,7 @@ interface Props {
   text: string;
 }
 
-export const Radio = ({text}: Props) => {
+export const Radio = ({text, ...props}: Props) => {
   return (
     <div className='inline-flex items-center border border-Slate-500 has-checked:bg-Lime/10 has-checked:border-Lime w-full h-[46px] rounded-sm p-4 cursor-pointer'>
         <label
@@ -10,9 +10,9 @@ export const Radio = ({text}: Props) => {
           htmlFor={text}
         >
           <input
-            name='mortgage'
-            required
+            {...props}
             type='radio'
+            value={text}
             className='peer h-5 w-5 cursor-pointer appearance-none rounded-full border-2 border-Slate-500 checked:border-Lime transition-all'
             id={text}
           />
