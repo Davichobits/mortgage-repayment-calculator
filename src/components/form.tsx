@@ -1,4 +1,5 @@
 import { calculateMortgage, type MortgageType } from '@utils/calculateMortgage'
+import { usePaymentContext } from '@contexts/use-payment-context'
 
 import { 
   useForm, 
@@ -16,6 +17,8 @@ type Inputs = {
 
 export const Form = () => {
 
+  const { setResults } = usePaymentContext();
+
   const {
     register,
     handleSubmit,
@@ -24,8 +27,13 @@ export const Form = () => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const {mortgageAmount, mortgageTerm, interestRate, mortgageType} = data;
-    const result = calculateMortgage(mortgageAmount, mortgageTerm, interestRate, mortgageType)
-    console.log(result);
+    const {monthlyPayment, totalRepay} = calculateMortgage(mortgageAmount, mortgageTerm, interestRate, mortgageType)
+
+    setResults({
+      monthlyPayment,
+      totalRepay, 
+    })
+    
   }
 
   return (

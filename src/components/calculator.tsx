@@ -1,15 +1,17 @@
-import { Form, Results } from '@components'
-import { PaymentContextProvider } from '@contexts/payment-context-provider'
-
+import { usePaymentContext } from '@contexts/use-payment-context'
+import { Form, Results, ResulsInstructions } from '@components'
 
 export const Calculator = () => {
+  const { results } = usePaymentContext();
 
   return (
-    <PaymentContextProvider>
-      <section className='w-[375px]'>
-        <Form/>
-        <Results/>
-      </section>
-    </PaymentContextProvider>
+    <section className='w-[375px]'>
+      <Form/>
+      {
+        results.monthlyPayment === 0 
+        ? <ResulsInstructions/>
+        : <Results/>
+      }
+    </section>
   )
 }

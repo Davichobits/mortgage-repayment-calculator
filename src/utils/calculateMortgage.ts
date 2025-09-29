@@ -14,8 +14,6 @@ export function calculateMortgage(
   const monthlyRate = interestRate / 100 / 12;
   const totalPayments = years * 12;
 
-  console.log(type);
-
   if (type === "Repayment") {
     // Fórmula de amortización
     const monthlyPayment =

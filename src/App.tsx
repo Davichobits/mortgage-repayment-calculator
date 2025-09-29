@@ -1,10 +1,13 @@
 import { Calculator } from '@components';
+import { PaymentContextProvider } from '@contexts/payment-context-provider';
 
 function App() {
   return (
-    <main className=''>
-      <Calculator /> 
-    </main>
+    <PaymentContextProvider>
+      <main>
+        <Calculator /> 
+      </main>
+    </PaymentContextProvider>
   );
 }
 

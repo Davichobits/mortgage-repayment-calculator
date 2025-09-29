@@ -1,31 +1,21 @@
-import { useState, createContext } from 'react';
+import { useState } from 'react';
+import { PaymentContext } from './payment-context';
+import type { Results } from './payment-context';
 
 interface Props {
   children: React.ReactNode;
-}
-
-interface Results {
-  monthlyPayment: number;
-  totalPayment: number;
-}
-
-interface PaymentContextType {
-  results: Results;
-  setResults: React.Dispatch<React.SetStateAction<Results>>;
 }
 
 export const PaymentContextProvider = ({children}: Props) => {
 
   const [results, setResults] = useState<Results>({
     monthlyPayment: 0,
-    totalPayment: 0
+    totalRepay: 0
   });
 
-  const paymentContext = createContext<PaymentContextType | null>(null);
-
   return (
-    <paymentContext.Provider value={{ results, setResults }}>
+    <PaymentContext.Provider value={{ results, setResults }}>
       {children}
-    </paymentContext.Provider>
+    </PaymentContext.Provider>
   );
 };
