@@ -5,3 +5,4 @@ export { Form } from './form';
 export { Results } from './results';
 export { Calculator } from './calculator';
 export { Payments } from './payments';
+export { ResulsInstructions } from './result-instructions'
