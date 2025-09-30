@@ -20,7 +20,7 @@ export const Input = ({
     : 'right-0 rounded-br-sm rounded-tr-sm pr-4'
 
   return (
-    <div className='mb-6'>
+    <div className='mb-6 w-full'>
       <label className='font-medium text-Slate-700 mb-3 block'>{label}</label>
 
       <div className='relative '>

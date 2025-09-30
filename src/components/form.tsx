@@ -15,7 +15,11 @@ type Inputs = {
   mortgageType: MortgageType
 }
 
-export const Form = () => {
+interface Props {
+  styles?: string;
+}
+
+export const Form = ({styles = ''}: Props) => {
 
   const { setResults } = usePaymentContext();
 
@@ -37,11 +41,13 @@ export const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='bg-White py-8 px-6'>
-      <h1 className='text-2xl font-bold mb-2'>Mortgage Calculator</h1>
-      <button className='font-medium underline text-Slate-700 mb-6 cursor-pointer'>
-        Clear All
-      </button>
+    <form onSubmit={handleSubmit(onSubmit)} className={`bg-White py-8 px-6 md:p-10 ${styles}`}>
+      <div className='md:flex md:justify-between md:mb-10'>
+        <h1 className='text-2xl font-bold mb-2 md:mb-0'>Mortgage Calculator</h1>
+        <button className='font-medium underline text-Slate-700 mb-6 cursor-pointer md:mb-0'>
+          Clear All
+        </button>
+      </div>
 
       <Input 
         {...register("mortgageAmount", { required: true, valueAsNumber: true })}
@@ -50,7 +56,7 @@ export const Form = () => {
         unit='$'
       />
 
-      <div>
+      <div className='md:flex md:gap-6'>
         <Input
           {...register("mortgageTerm", { required: true })}
           error={errors.mortgageTerm?.type === 'required'}
@@ -75,7 +81,7 @@ export const Form = () => {
       </div>
       {errors.mortgageType && <p className='text-Red text-sm mt-3'>This field is required</p>}
 
-      <Button styles='mt-6' />
+      <Button styles='mt-6 md:max-w-[314px]' />
     </form>
   )
 }
