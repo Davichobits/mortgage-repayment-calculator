@@ -11,4 +11,10 @@ export interface PaymentContextType {
   setResults: (results: Results) => void;
 }
 
-export const PaymentContext = createContext<PaymentContextType | null>(null);
+export const PaymentContext = createContext<PaymentContextType>({
+  results: {
+    monthlyPayment: 0,
+    totalRepay: 0
+  },
+  setResults: () => {}
+});

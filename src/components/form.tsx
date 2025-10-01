@@ -27,6 +27,7 @@ export const Form = ({styles = ''}: Props) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -40,11 +41,16 @@ export const Form = ({styles = ''}: Props) => {
     
   }
 
+  const handleClear = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // Prevenir el submit del formulario
+    reset();
+  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={`bg-White py-8 px-6 md:p-10 ${styles}`}>
       <div className='md:flex md:justify-between md:mb-10'>
         <h1 className='text-2xl font-bold mb-2 md:mb-0'>Mortgage Calculator</h1>
-        <button className='font-medium underline text-Slate-700 mb-6 cursor-pointer md:mb-0'>
+        <button onClick={handleClear} className='font-medium underline text-Slate-700 mb-6 cursor-pointer md:mb-0'>
           Clear All
         </button>
       </div>
