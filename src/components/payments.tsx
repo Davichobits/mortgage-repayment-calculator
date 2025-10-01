@@ -3,7 +3,7 @@ import { PaymentContext, type PaymentContextType } from '@contexts/payment-conte
 
 export const Payments = () => {
 
-  const payments = useContext<PaymentContextType | null>(PaymentContext);
+  const payments = useContext<PaymentContextType>(PaymentContext);
 
   return (
     <div className='border-t-4 border-Lime rounded-lg py-6 px-4 bg-black/25'>
