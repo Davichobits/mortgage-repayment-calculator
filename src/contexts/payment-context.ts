@@ -7,7 +7,8 @@ export interface Results {
 
 export interface PaymentContextType {
   results: Results;
-  setResults: React.Dispatch<React.SetStateAction<Results>>;
+  // setResults: React.Dispatch<React.SetStateAction<Results>>;
+  setResults: (results: Results) => void;
 }
 
 export const PaymentContext = createContext<PaymentContextType | null>(null);

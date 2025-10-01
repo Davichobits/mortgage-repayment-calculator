@@ -4,7 +4,7 @@ import { PaymentContextProvider } from '@contexts/payment-context-provider';
 function App() {
   return (
     <PaymentContextProvider>
-      <main>
+      <main className='h-screen grid place-content-center'>
         <Calculator /> 
       </main>
     </PaymentContextProvider>
